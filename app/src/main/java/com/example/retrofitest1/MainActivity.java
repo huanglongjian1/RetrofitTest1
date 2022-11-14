@@ -13,7 +13,7 @@ import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity {
     String key = "14134781d3024bf3945b32caeebf29ae";
-    String location = "南宁";
+    String location = "扬州";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
