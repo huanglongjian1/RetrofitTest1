@@ -35,7 +35,7 @@ public class Network {
                 if (mApi == null) {
                     Retrofit retrofit = new Retrofit.Builder()
                             //使用自定义的mGsonConverterFactory
-                           // .addConverterFactory(GsonConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())
                             .baseUrl("https://free-api.heweather.com/")
                             .build();
                     mApi = retrofit.create(APi.class);

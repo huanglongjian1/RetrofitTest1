@@ -1,15 +1,5 @@
 package com.example.retrofitest1;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
 public class BasicBean {
     /**
      * cid : CN101190601
@@ -30,50 +20,6 @@ public class BasicBean {
     private String lat;
     private String lon;
     private String tz;
-
-    public static BasicBean objectFromData(String str) {
-
-        return new Gson().fromJson(str, BasicBean.class);
-    }
-
-    public static BasicBean objectFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-
-            return new Gson().fromJson(jsonObject.getString(str), BasicBean.class);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-    public static List<BasicBean> arrayBasicBeanFromData(String str) {
-
-        Type listType = new TypeToken<ArrayList<BasicBean>>() {
-        }.getType();
-
-        return new Gson().fromJson(str, listType);
-    }
-
-    public static List<BasicBean> arrayBasicBeanFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-            Type listType = new TypeToken<ArrayList<BasicBean>>() {
-            }.getType();
-
-            return new Gson().fromJson(jsonObject.getString(str), listType);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList();
-
-
-    }
 
     public String getCid() {
         return cid;

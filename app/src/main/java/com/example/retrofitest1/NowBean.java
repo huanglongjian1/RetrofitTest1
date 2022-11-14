@@ -1,30 +1,20 @@
 package com.example.retrofitest1;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
 public class NowBean {
     /**
-     * cloud : 0
+     * cloud : 10
      * cond_code : 100
      * cond_txt : 晴
-     * fl : 4
+     * fl : 3
      * hum : 99
      * pcpn : 0.0
      * pres : 1020
-     * tmp : 6
-     * vis : 2
-     * wind_deg : 274
-     * wind_dir : 西风
+     * tmp : 5
+     * vis : 1
+     * wind_deg : 359
+     * wind_dir : 北风
      * wind_sc : 1
-     * wind_spd : 3
+     * wind_spd : 4
      */
 
     private String cloud;
@@ -40,50 +30,6 @@ public class NowBean {
     private String wind_dir;
     private String wind_sc;
     private String wind_spd;
-
-    public static NowBean objectFromData(String str) {
-
-        return new Gson().fromJson(str, NowBean.class);
-    }
-
-    public static NowBean objectFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-
-            return new Gson().fromJson(jsonObject.getString(str), NowBean.class);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-    public static List<NowBean> arrayNowBeanFromData(String str) {
-
-        Type listType = new TypeToken<ArrayList<NowBean>>() {
-        }.getType();
-
-        return new Gson().fromJson(str, listType);
-    }
-
-    public static List<NowBean> arrayNowBeanFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-            Type listType = new TypeToken<ArrayList<NowBean>>() {
-            }.getType();
-
-            return new Gson().fromJson(jsonObject.getString(str), listType);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList();
-
-
-    }
 
     public String getCloud() {
         return cloud;

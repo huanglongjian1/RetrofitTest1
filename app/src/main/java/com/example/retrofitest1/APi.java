@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 public interface APi {
    // @Headers({"apikey:81bf9da930c7f9825a3c3383f1d8d766", "Content-Type:application/json"})
     @GET("s6/weather/now")
-    Call<ResponseBody> getNews(@Query("key")String key, @Query("location")String city);
+    Call<JavaBean> getNews(@Query("key")String key, @Query("location")String city);
 
 }
 
