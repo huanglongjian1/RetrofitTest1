@@ -131,6 +131,25 @@ public class NowBean {
         return wind_spd;
     }
 
+    @Override
+    public String toString() {
+        return "NowBean{" +
+                "cloud='" + cloud + '\'' +
+                ", cond_code='" + cond_code + '\'' +
+                ", cond_txt='" + cond_txt + '\'' +
+                ", fl='" + fl + '\'' +
+                ", hum='" + hum + '\'' +
+                ", pcpn='" + pcpn + '\'' +
+                ", pres='" + pres + '\'' +
+                ", tmp='" + tmp + '\'' +
+                ", vis='" + vis + '\'' +
+                ", wind_deg='" + wind_deg + '\'' +
+                ", wind_dir='" + wind_dir + '\'' +
+                ", wind_sc='" + wind_sc + '\'' +
+                ", wind_spd='" + wind_spd + '\'' +
+                '}';
+    }
+
     public void setWind_spd(String wind_spd) {
         this.wind_spd = wind_spd;
     }
