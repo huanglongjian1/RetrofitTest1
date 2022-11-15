@@ -2,6 +2,7 @@ package com.example.retrofitest1;
 
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -35,6 +36,7 @@ public class Network {
                 if (mApi == null) {
                     Retrofit retrofit = new Retrofit.Builder()
                             //使用自定义的mGsonConverterFactory
+                            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .addConverterFactory(GsonConverterFactory.create())
                             .baseUrl("https://free-api.heweather.com/")
                             .build();
